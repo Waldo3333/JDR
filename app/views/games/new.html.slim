@@ -1,0 +1,5 @@
+h1.text-3xl.font-bold.mb-5 Nouvelle partie
+
+= simple_form_for @game, data: { turbo: false } do |f|
+  = f.input :name, label: "Nom de la partie"
+  = f.button :submit, "Créer", class: "bg-green-500 text-white px-4 py-2 rounded"

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.indexGameCard {
+		@apply w-[80vw] bg-amber-600 m-auto;
+	}
+}

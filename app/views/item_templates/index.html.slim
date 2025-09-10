@@ -1,0 +1,11 @@
+h1 Les items
+
+= link_to new_item_template_path do
+  p Créer un nouvel item
+
+.flex.flex-wrap.gap-2
+  - @item_templates.each do |item|
+    .flex.flex-col.p-4.bg-amber-200.w-xl.h-max
+      p = item.name
+      p = item.rarity
+      p = item.description

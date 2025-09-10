@@ -1,0 +1,15 @@
+.flex.flex-col.gap-2
+  .div class="flex bg-amber-200 justify-center w-screen"
+    h1 JDR Manager
+  .flex.bg-blue-500
+    = link_to games_path do
+      p vos parties
+  .flex.bg-blue-500
+    = link_to new_game_path do
+      p Créer une partie
+  .flex.bg-blue-500
+    = link_to item_templates_path do
+      p Les items
+  .flex.bg-cyan-500
+    =link_to game_users_path do
+      p Invitations

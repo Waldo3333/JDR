@@ -1,0 +1,5 @@
+= form_with model: GameUser.new, url: game_users_path do |f|
+  = f.hidden_field :game_id, value: @game.id
+  = f.collection_select :user_id, User.all, :id, :username, prompt: "Sélectionner un joueur"
+  = f.hidden_field :role, value: 2
+  = f.submit "Inviter"

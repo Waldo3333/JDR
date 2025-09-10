@@ -1,0 +1,2 @@
+class ItemTemplate < ApplicationRecord
+end

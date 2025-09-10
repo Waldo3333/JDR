@@ -1,0 +1,8 @@
+.flex.flex-col.w-screen
+  h1.font-extrabold.uppercase.tracking-widest Vos parties
+  .flex.flex-col.gap-3
+    - @games.each do |game|
+      = link_to game_path(game)
+        .indexGameCard
+            = game.name
+    end

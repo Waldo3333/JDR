@@ -1,0 +1,8 @@
+h1.text-3xl.font-bold.mb-5 Nouveau Item Template
+
+= simple_form_for @item_template do |f|
+  = f.input :name, label: "Nom de l'objet"
+  = f.input :rarity, label: "Rareté", as: :integer, hint: "1 = commun, 5 = légendaire"
+  = f.input :description, label: "Description", as: :text
+
+  = f.button :submit, "Créer", class: "bg-green-500 text-white px-4 py-2 rounded"

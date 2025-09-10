@@ -1,0 +1,18 @@
+.flex.flex-col.w-screen.items-center
+  h1.font-extrabold.uppercase.tracking-widest
+    = @game.name
+  .flex.gap-2
+    p crée par
+    = @game.user.username
+- if @game.user == current_user
+  h2 Inviter un joueur
+  = form_with model: @game_user, url: game_users_path do |f|
+    = f.hidden_field :game_id, value: @game.id
+    = f.collection_select :user_id, User.where.not(id: @game.users.pluck(:id)), :id, :username, prompt: "Sélectionner un joueur"
+    = f.hidden_field :role, value: "player"
+    = f.submit "Inviter"
+- @this_game_users.each do |game_user|
+  .border-2.w-max
+    p = game_user.user.username
+    p = game_user.status
+    p = game_user.role

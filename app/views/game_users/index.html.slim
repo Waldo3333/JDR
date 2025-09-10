@@ -1,0 +1,13 @@
+h1 Vos invitations
+
+- @game_users.each do |game_user|
+  .flex.flex-col.gap-2
+    p = game_user.game.name
+    p = game_user.status
+
+  .flex.gap-2
+    = form_with url: accept_game_user_path(game_user), method: :patch, local: true do |f|
+      = f.submit "Accepter", class: "btn btn-success"
+
+    = form_with url: decline_game_user_path(game_user), method: :patch, local: true do |f|
+      = f.submit "Refuser", class: "btn btn-danger"
